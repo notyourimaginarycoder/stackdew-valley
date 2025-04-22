@@ -1,0 +1,57 @@
+import Phaser from 'phaser'
+
+// import GameScene from './scenes/game-scene'
+
+import overworldScene from './scenes/overworld.js';
+import preloadScene from './scenes/preloadScene.js';
+import firstFloor from './scenes/firstFloor.js';
+import secondFloor from './scenes/secondFloor.js';
+import farmScene from './scenes/farmScene.js';
+import computerScene from './scenes/computerScene.js';
+import officeScene from './scenes/officeScene.js';
+import battleScene from './scenes/battleScene.js';
+
+let gameInstance = null
+
+const config = {
+  type: Phaser.AUTO,
+  width: 1024,
+  height: 768,
+  backgroundColor: '#000000',
+  parent: 'stackdew-valley',
+  scene: [
+    farmScene,
+    firstFloor,
+    overworldScene,
+    preloadScene,
+    secondFloor,
+    computerScene,
+    officeScene,
+    battleScene,
+  ],
+  scale: {
+    mode: Phaser.Scale.RESIZE,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
+  physics: {
+    default: 'arcade',
+    arcade: {
+      debug: false,
+    },
+  },
+}
+
+export const launchGame = () => {
+  if (!gameInstance) {
+    gameInstance = new Phaser.Game(config)
+  }
+}
+
+export const destroyGame = () => {
+  if (gameInstance) {
+    gameInstance.destroy(true)
+    gameInstance = null
+  }
+}
+
+export const getGameInstance = () => gameInstance
