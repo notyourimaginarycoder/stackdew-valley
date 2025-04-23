@@ -1,6 +1,5 @@
 import {
   createUser,
-  getCurrentUser,
   loginUser,
 } from '../firebase/firebase-queries'
 

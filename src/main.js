@@ -4,10 +4,9 @@ import '../test.js'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 
 import { auth } from './firebase/firebase-init'
-import { handleAuthStateChange } from './firebase/firebase-queries.js'
+import { handleAuthStateChange } from './firebase/firebase-queries'
 import { setupAuthModal } from './components/auth'
-
-import { initThemeSwitcher } from './components/mode-switch.js'
+import { initThemeSwitcher } from './components/mode-switch'
 
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.createElement('nav')
