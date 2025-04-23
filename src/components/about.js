@@ -5,10 +5,6 @@ export const setupAboutModal = () => {
           <span id="close-about-modal" class="close-btn">&times;</span>
           <div id="about-content">
             <h2>About This Project</h2>
-            <p>This project is a gamified developer experience inspired by life-sim games.</p>
-            <p>You can manage devlings, assign skills, and explore different areas of the map while learning!</p>
-            <p>Built with <strong>Firebase</strong>, <strong>Vite</strong>, and <strong>Vanilla JS</strong>.</p>
-            <p>Made by <strong>[Your Name]</strong> 💻🎮</p>
           </div>
         </div>
       </div>
