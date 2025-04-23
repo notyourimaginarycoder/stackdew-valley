@@ -57,8 +57,7 @@ export const createUser = async (username, password, confirmPassword) => {
         last_login_at: serverTimestamp(),
         user_id: user.uid,
         position: { x: 0, y: 0, map: 'StartZone' },
-      },
-      { merge: true }
+      }
     )
 
   } catch (error) {
