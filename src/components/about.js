@@ -22,14 +22,21 @@ export const setupAboutModal = () => {
             <h2>Meet the Team</h2>
             <div class="team-grid">
               ${generateTeamProfiles([
-                { name: 'Chris', github: 'slightly76' },
-                { name: 'Tymur', github: 'papaparadox' },
-                { name: 'Sophie', github: 'sophtompa' },
-                { name: 'Paul', github: 'testmango-sudo' },
-                { name: 'Ken Terria', github: 'MuseOfCode' },
-                { name: 'Dean', github: 'notyourimaginarycoder' },
+                { name: 'Chris Askew', github: 'slightly76' },
+                { name: 'Tymur Holovko', github: 'papaparadox' },
+                { name: 'Sophie Thompson', github: 'sophtompa' },
+                { name: 'Paul McDonagh', github: 'testmango-sudo' },
+                { name: 'Ken\'Terria Reaves', github: 'MuseOfCode' },
+                { name: 'Dean Wilson', github: 'notyourimaginarycoder' },
               ])}
             </div>
+          </section>
+
+          <hr/>
+
+          <section class="about-section">
+            <h2>Tech-stack</h2>
+              <p>built with <strong>javascript, vite, phaser</strong></p>
           </section>
         </div>
       </div>

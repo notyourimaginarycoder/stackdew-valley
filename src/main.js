@@ -8,6 +8,7 @@ import { handleAuthStateChange } from './firebase/firebase-queries'
 import { setupAuthModal } from './components/auth'
 import { initThemeSwitcher } from './components/mode-switch'
 import { setupAboutModal } from './components/about'
+import { setupInstructionsModal } from './components/instructions.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.createElement('nav')
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <ul class="navbar-left">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#instructions">Instructions</a></li>
   </ul>
   <ul class="navbar-right">
       <li><span id="user-display" style="color:white;"></span></li>
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupAuthModal()
   setupAboutModal()
+  setupInstructionsModal()
 
   onAuthStateChanged(auth, (user) => {
     handleAuthStateChange(user)
