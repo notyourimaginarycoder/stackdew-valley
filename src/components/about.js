@@ -35,6 +35,8 @@ export const setupAboutModal = () => {
   `
 
   document.body.insertAdjacentHTML('beforeend', modal)
+  const app = document.getElementById('app')
+  app.innerHTML += modal
 
   const aboutModal = document.getElementById('about-modal')
   const closeBtn = document.getElementById('close-about-modal')

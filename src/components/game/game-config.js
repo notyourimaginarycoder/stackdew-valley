@@ -10,6 +10,9 @@ import farmScene from './scenes/farmScene.js';
 import computerScene from './scenes/computerScene.js';
 import officeScene from './scenes/officeScene.js';
 import battleScene from './scenes/battleScene.js';
+// import battleCardScene from './scenes/battleCards.js';
+import pauseScene from './scenes/pauseScene.js';
+// import trumpBattle from "./scenes/trumpScene.js";
 
 let gameInstance = null
 
@@ -28,6 +31,7 @@ const config = {
     computerScene,
     officeScene,
     battleScene,
+    pauseScene,
   ],
   scale: {
     mode: Phaser.Scale.RESIZE,
