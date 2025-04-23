@@ -7,6 +7,7 @@ import { auth } from './firebase/firebase-init'
 import { handleAuthStateChange } from './firebase/firebase-queries'
 import { setupAuthModal } from './components/auth'
 import { initThemeSwitcher } from './components/mode-switch'
+import { setupAboutModal } from './components/about'
 
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.createElement('nav')
@@ -27,9 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = document.getElementById('app')
   app.appendChild(navbar)
 
-
-
   setupAuthModal()
+  setupAboutModal()
 
   onAuthStateChanged(auth, (user) => {
     handleAuthStateChange(user)

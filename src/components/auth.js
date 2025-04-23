@@ -3,7 +3,7 @@ import {
   loginUser,
 } from '../firebase/firebase-queries'
 
-export function setupAuthModal() {
+export const setupAuthModal = () => {
   const modal = `
         <div id="auth-modal" class="modal">
             <div class="modal-content">

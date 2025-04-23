@@ -1,6 +1,6 @@
 import { auth, db } from './src/firebase/firebase-init'
 
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 
 import {
   addItemToInventory,
