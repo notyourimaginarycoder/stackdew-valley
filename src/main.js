@@ -1,15 +1,11 @@
 import './style.css'
+import '../test.js'
 
 import { onAuthStateChanged, signOut } from 'firebase/auth'
-import { doc, getDoc } from 'firebase/firestore'
 
+import { auth} from './firebase/firebase-init'
+import { handleAuthStateChange } from './firebase/firebase-queries.js'
 import { setupAuthModal } from './components/auth'
-import { auth, db } from './firebase/firebase-init'
-import {
-  launchGame,
-  destroyGame,
-  getGameInstance,
-} from './components/game/game-config'
 
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.createElement('nav')
@@ -31,35 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setupAuthModal()
 
-  onAuthStateChanged(auth, async (user) => {
-    const userDisplay = document.getElementById('user-display')
-    const loginBtn = document.getElementById('login-btn')
-    const logoutBtn = document.getElementById('logout-btn')
-
-    if (user) {
-      try {
-        const userDocRef = doc(db, 'users', user.uid)
-        const userDocSnap = await getDoc(userDocRef)
-
-        if (userDocSnap.exists()) {
-          const userData = userDocSnap.data()
-          userDisplay.textContent = `Logged in as: ${userData.username}`
-        }
-
-        loginBtn.style.display = 'none'
-        logoutBtn.style.display = 'inline-block'
-        if (!getGameInstance()) {
-          launchGame()
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error)
-      }
-    } else {
-      userDisplay.textContent = ''
-      loginBtn.style.display = 'inline-block'
-      logoutBtn.style.display = 'none'
-      destroyGame()
-    }
+  onAuthStateChanged(auth, (user) => {
+    handleAuthStateChange(user)
   })
 })
 
