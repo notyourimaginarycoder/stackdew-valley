@@ -1,4 +1,7 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth'
 import {
   doc,
   getDoc,
@@ -8,7 +11,7 @@ import {
   getDocs,
   query,
   collection,
-  where
+  where,
 } from 'firebase/firestore'
 
 import { auth, db } from './firebase-init'
@@ -80,6 +83,19 @@ export const loginUser = async (username, password) => {
   } catch (error) {
     throw new Error(`Login failed: ${error.message}`)
   }
+}
+
+export const getCurrentUser = async () => {
+  const user = auth.currentUser
+
+  if (!user) throw new Error('No user is currently logged in')
+
+  const userDocRef = doc(db, 'users', user.uid)
+  const userDocSnap = await getDoc(userDocRef)
+
+  if (!userDocSnap.exists()) throw new Error('User document not found')
+
+  return userDocSnap.data()
 }
 
 export const handleAuthStateChange = async (user) => {

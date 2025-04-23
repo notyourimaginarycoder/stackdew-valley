@@ -1,4 +1,8 @@
-import { createUser, loginUser } from '../firebase/firebase-queries'
+import {
+  createUser,
+  getCurrentUser,
+  loginUser,
+} from '../firebase/firebase-queries'
 
 export function setupAuthModal() {
   const modal = `
@@ -67,12 +71,10 @@ export function setupAuthModal() {
     const password = document.getElementById('password').value
 
     try {
-      const { success } = await loginUser(username, password)
+      await loginUser(username, password)
 
-      if (success) {
-        alert('Logged in successfully!')
-        modalElement.style.display = 'none'
-      }
+      alert('Logged in successfully!')
+      modalElement.style.display = 'none'
     } catch (error) {
       alert(error.message)
     }
@@ -90,13 +92,7 @@ export function setupAuthModal() {
     }
 
     try {
-      const { user, inventory } = await createUser(
-        username,
-        password,
-        confirmPassword
-      )
-      console.log('User created successfully:', user)
-      console.log('User inventory:', inventory)
+      await createUser(username, password, confirmPassword)
 
       alert('Signed up successfully!')
       modalElement.style.display = 'none'
