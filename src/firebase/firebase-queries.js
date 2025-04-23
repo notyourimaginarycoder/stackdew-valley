@@ -61,7 +61,6 @@ export const createUser = async (username, password, confirmPassword) => {
       { merge: true }
     )
 
-    return { user, inventory: emptyInventory }
   } catch (error) {
     throw new Error(`Signup failed: ${error.message}`)
   }
@@ -79,7 +78,6 @@ export const loginUser = async (username, password) => {
 
     await signInWithEmailAndPassword(auth, email, password)
 
-    return { success: true }
   } catch (error) {
     throw new Error(`Login failed: ${error.message}`)
   }
