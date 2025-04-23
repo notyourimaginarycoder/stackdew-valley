@@ -25,32 +25,34 @@ export default class farmScene extends Phaser.Scene {
 		this.spawnY = spawn.y;
 	}
 
+	// /home/imaginary/Desktop/project/src/components/game/scenes/farmScene.js
+
 	preload() {
-		this.load.tilemapTiledJSON('theFarmMap', '../assets/chrisfarm.json');
-		this.load.image('1_Terrains_32x32', '../assets/1_Terrains_32x32.png');
-		this.load.image('2_Fences_32x32', '../assets/2_Fences_32x32.png');
+		this.load.tilemapTiledJSON('theFarmMap', 'assets/chrisfarm.json');
+		this.load.image('1_Terrains_32x32', 'assets/1_Terrains_32x32.png');
+		this.load.image('2_Fences_32x32', 'assets/2_Fences_32x32.png');
 		this.load.image(
 			'3_Props_and_Buildings_32x32',
-			'../assets/3_Props_and_Buildings_32x32.png'
+			'assets/3_Props_and_Buildings_32x32.png'
 		);
-		this.load.image('6_Trees_32x32', '../assets/6_Trees_32x32.png');
+		this.load.image('6_Trees_32x32', 'assets/6_Trees_32x32.png');
 		this.load.spritesheet('playerSheet', 'assets/rose.png', {
 			frameWidth: 64,
 			frameHeight: 64,
 		});
 		//devling head for UI
-		this.load.spritesheet('devlingImage', '../assets/devlingSpritesheet.png', {
+		this.load.spritesheet('devlingImage', 'assets/devlingSpritesheet.png', {
 			frameWidth: 64,
 			frameHeight: 64,
 		});
 
 		//sound effects
-		this.load.audio('plantingSound', '../assets/planting.wav');
-		this.load.audio('wateringSound', '../assets/watering.wav');
-		this.load.audio('harvestingSound', '../assets/harvest.wav');
-		this.load.audio('birdsSound', '../assets/birds.wav');
-		this.load.audio('speechSound', '../assets/speechSound.wav');
-		this.load.audio('doorSound', '../assets/door.wav');
+		this.load.audio('plantingSound', 'assets/planting.wav');
+		this.load.audio('wateringSound', 'assets/watering.wav');
+		this.load.audio('harvestingSound', 'assets/harvest.wav');
+		this.load.audio('birdsSound', 'assets/birds.wav');
+		this.load.audio('speechSound', 'assets/speechSound.wav');
+		this.load.audio('doorSound', 'assets/door.wav');
 	}
 
 	create() {

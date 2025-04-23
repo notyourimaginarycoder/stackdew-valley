@@ -23,8 +23,8 @@ const config = {
   backgroundColor: '#000000',
   parent: 'stackdew-valley',
   scene: [
-    farmScene,
     firstFloor,
+    farmScene,
     overworldScene,
     preloadScene,
     secondFloor,

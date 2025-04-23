@@ -11,7 +11,7 @@ export default class battleScene extends Phaser.Scene {
 
 	preload() {
 		//single map background
-		this.load.image('jobApproach', '../assets/battlewithapproach.png');
+		this.load.image('jobApproach', 'assets/battlewithapproach.png');
 
 		//player sprite (for "jumper")
 		this.load.spritesheet('playerSheet', 'assets/dummy.png', {
@@ -20,18 +20,18 @@ export default class battleScene extends Phaser.Scene {
 		});
 
 		//animated fire sprite for rooftop barrels
-		this.load.spritesheet('fire', '../assets/burning_loop_3.png', {
+		this.load.spritesheet('fire', 'assets/burning_loop_3.png', {
 			frameWidth: 15,
 			frameHeight: 24,
 		});
 
 		// grafitti sprite for "easter egg"
-		this.load.image('grafitti', '../assets/grafitti.png');
+		this.load.image('grafitti', 'assets/grafitti.png');
 
 		//audio files for speech and footsteps
-		this.load.audio('speechSound', '../assets/speechSound.wav');
-		this.load.audio('footStepSound', '../assets/footStepSound.wav');
-		this.load.audio('citySound', '../assets/cityweird.wav');
+		this.load.audio('speechSound', 'assets/speechSound.wav');
+		this.load.audio('footStepSound', 'assets/footStepSound.wav');
+		this.load.audio('citySound', 'assets/cityweird.wav');
 	}
 
 	create() {

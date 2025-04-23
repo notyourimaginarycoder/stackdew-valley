@@ -13,22 +13,22 @@ export default class FirstFloor extends Phaser.Scene {
 	preload() {
 		this.load.tilemapTiledJSON(
 			'firstFloorHouseMapData',
-			'../assets/chrishouseMap.json'
+			'assets/chrishouseMap.json'
 		);
-		this.load.image('firstFloorHouseMap', '../assets/chrishouseMap.png');
+		this.load.image('firstFloorHouseMap', 'assets/chrishouseMap.png');
 		this.load.spritesheet('playerSheet', 'assets/rose.png', {
 			frameWidth: 32,
 			frameHeight: 65,
 		});
-		this.load.spritesheet('devlingImage', '../assets/devlingSpritesheet.png', {
+		this.load.spritesheet('devlingImage', 'assets/devlingSpritesheet.png', {
 			frameWidth: 64,
 			frameHeight: 64,
 		});
 		this.load.image('emailIcon', 'assets/email.png');
 		this.load.image('newMailIcon', 'assets/mail.png');
 		this.load.audio('mailSound', 'assets/yougotmail.mp3');
-		this.load.audio('harvestingSound', '../assets/harvest.wav');
-		this.load.audio('speechSound', '../assets/speechSound.wav');
+		this.load.audio('harvestingSound', 'assets/harvest.wav');
+		this.load.audio('speechSound', 'assets/speechSound.wav');
 	}
 
 	create() {

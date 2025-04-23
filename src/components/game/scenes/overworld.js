@@ -28,17 +28,17 @@ export default class overworldScene extends Phaser.Scene {
 	}
 
 	preload() {
-		// this.load.tilemapTiledJSON('map', '../assets/overworld.JSON');
-		// this.load.image('mapImage', '../assets/1_Terrains_32x32.png');
+		// this.load.tilemapTiledJSON('map', 'assets/overworld.JSON');
+		// this.load.image('mapImage', 'assets/1_Terrains_32x32.png');
 
-		// this.load.tilemapTiledJSON('map', '../assets/overworldsophie.json');
-		this.load.image('mapImage', '../assets/overworldsophie.png' )
+		// this.load.tilemapTiledJSON('map', 'assets/overworldsophie.json');
+		this.load.image('mapImage', 'assets/overworldsophie.png' )
 
-		this.load.spritesheet('playerSheet', '../assets/rose.png', {
+		this.load.spritesheet('playerSheet', 'assets/rose.png', {
 			frameWidth: 64,
 			frameHeight: 64,
 		});
-		this.load.spritesheet('devlingImage', '../assets/devlingSpritesheet.png', {
+		this.load.spritesheet('devlingImage', 'assets/devlingSpritesheet.png', {
 			frameWidth: 64,
 			frameHeight: 64,
 		});

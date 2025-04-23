@@ -11,7 +11,7 @@ export default class officeScene extends Phaser.Scene {
 	preload() {
 		this.load.tilemapTiledJSON('dummyOfficeMap', 'assets/dummyOfficeMap.json');
 		this.load.image('dummyOfficeMap', 'assets/dummyOfficeMap.png');
-		this.load.audio('speechSound', '../assets/speechSound.wav');
+		this.load.audio('speechSound', 'assets/speechSound.wav');
 	}
 
 	create() {

@@ -1,4 +1,4 @@
-import { database } from "/src/dummydata.js";
+import { database } from "/dummydata.js";
 
 export default class battleCardScene extends Phaser.Scene {
   constructor() {
@@ -6,8 +6,8 @@ export default class battleCardScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("playerCard", "../assets/cardDesign.png");
-    this.load.image("enemyCard", "../assets/cardDesign.png");
+    this.load.image("playerCard", "assets/cardDesign.png");
+    this.load.image("enemyCard", "assets/cardDesign.png");
   }
 
   create() {

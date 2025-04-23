@@ -22,9 +22,11 @@ export const setupAboutModal = () => {
             <h2>Meet the Team</h2>
             <div class="team-grid">
               ${generateTeamProfiles([
-                { name: 'Dean', github: 'notyourimaginarycoder' },
-                { name: 'Dean', github: 'notyourimaginarycoder' },
-                { name: 'Dean', github: 'notyourimaginarycoder' },
+                { name: 'Chris', github: 'slightly76' },
+                { name: 'Tymur', github: 'papaparadox' },
+                { name: 'Sophie', github: 'sophtompa' },
+                { name: 'Paul', github: 'testmango-sudo' },
+                { name: 'Ken Terria', github: 'MuseOfCode' },
                 { name: 'Dean', github: 'notyourimaginarycoder' },
               ])}
             </div>
@@ -35,8 +37,6 @@ export const setupAboutModal = () => {
   `
 
   document.body.insertAdjacentHTML('beforeend', modal)
-  const app = document.getElementById('app')
-  app.innerHTML += modal
 
   const aboutModal = document.getElementById('about-modal')
   const closeBtn = document.getElementById('close-about-modal')
