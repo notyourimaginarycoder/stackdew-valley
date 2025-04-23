@@ -3,9 +3,11 @@ import '../test.js'
 
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 
-import { auth} from './firebase/firebase-init'
+import { auth } from './firebase/firebase-init'
 import { handleAuthStateChange } from './firebase/firebase-queries.js'
 import { setupAuthModal } from './components/auth'
+
+import { initThemeSwitcher } from './components/mode-switch.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.createElement('nav')
@@ -19,17 +21,22 @@ document.addEventListener('DOMContentLoaded', () => {
       <li><span id="user-display" style="color:white;"></span></li>
       <li><button id="login-btn">Login</button></li>
       <li><button id="logout-btn" style="display: none;">Logout</button></li>
+      <li><button id="theme-toggle" aria-label="Toggle dark mode">🌞</button></li>
   </ul>
     `
 
   const app = document.getElementById('app')
   app.appendChild(navbar)
 
+
+
   setupAuthModal()
 
   onAuthStateChanged(auth, (user) => {
     handleAuthStateChange(user)
   })
+
+  initThemeSwitcher()
 })
 
 document.addEventListener('click', async (e) => {
