@@ -5,8 +5,8 @@ import { onAuthStateChanged, signOut } from 'firebase/auth'
 
 import { auth } from './firebase/firebase-init'
 import { handleAuthStateChange } from './firebase/firebase-queries'
-import { setupAuthModal } from './components/auth'
 import { initThemeSwitcher } from './components/mode-switch'
+import { setupAuthModal } from './components/auth'
 import { setupAboutModal } from './components/about'
 import { setupInstructionsModal } from './components/instructions.js'
 
