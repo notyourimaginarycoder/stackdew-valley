@@ -27,6 +27,7 @@ body {
   background-color: var(--background);
   color: var(--text);
   line-height: 1.6;
+  position: relative;
   min-height: 100vh;
   padding-top: 60px;
 
@@ -42,14 +43,17 @@ body {
 #stackdew-valley {
   width: 95vw;
   height: 95vh;
-  /* background: linear-gradient(to bottom, #fefae0, #d4a373); */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  margin-top: 10%;
 }
+
 
 
 #stackdew-valley canvas {
@@ -342,6 +346,22 @@ nav.navbar button:hover {
   color: var(--text);
 }
 
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .logo-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-item {
+    width: 70px;
+    margin-bottom: 10px;
+  }
+}
+
 /* ==============================
    Instructions Modal
 ================================= */
@@ -525,20 +545,4 @@ p span {
 [data-theme='dark'] .team-member h3,
 [data-theme='dark'] .team-member p {
   color: var(--white);
-}
-
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  }
-
-  .logo-grid {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .logo-item {
-    width: 70px;
-    margin-bottom: 10px;
-  }
 }
