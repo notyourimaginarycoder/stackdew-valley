@@ -1,5 +1,5 @@
 import './style.css'
-import '../test.js'
+// import '../test.js'
 
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 

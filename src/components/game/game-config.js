@@ -19,8 +19,8 @@ let gameInstance = null
 const config = {
   type: Phaser.AUTO,
   width: 800,
-  height: 600,
-  backgroundColor: '#000000',
+  height: 448,
+  backgroundColor: '#2d2d2d',
   parent: 'stackdew-valley',
   scene: [
     firstFloor,
@@ -34,7 +34,7 @@ const config = {
     pauseScene,
   ],
   scale: {
-    mode: Phaser.Scale.RESIZE,
+    mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   physics: {
