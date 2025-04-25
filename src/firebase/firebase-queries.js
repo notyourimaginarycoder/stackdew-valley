@@ -23,7 +23,7 @@ import {
 
 const createEmptyInventory = () => {
   const inventory = {}
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 6; i++) {
     inventory[`slot${i}`] = { item: null }
   }
   return inventory
