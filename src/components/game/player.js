@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+import { playerMovement } from '../../firebase/firebase-queries'
+
 export default class Player extends Phaser.Physics.Arcade.Sprite {
 	constructor(scene, x, y, texture) {
 		super(scene, x, y, texture);
@@ -21,6 +23,22 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
 		//create animations in the scene
 		this.createAnimations(scene);
+
+		this.lastSentPosition = { x: this.x, y: this.y }
+
+		scene.time.addEvent({
+			delay: 1000,
+			callback: () => {
+				const hasMoved =
+					this.x !== this.lastSentPosition.x || this.y !== this.lastSentPosition.y
+		
+				if (hasMoved) {
+					playerMovement(this.x, this.y);
+					this.lastSentPosition = { x: this.x, y: this.y }
+				}
+			},
+			loop: true
+		})
 	}
 
 	createAnimations(scene) {
@@ -121,5 +139,6 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
 		//no walking diagonally
 		this.body.velocity.normalize().scale(speed);
+
 	}
 }

@@ -47,19 +47,15 @@ export const createUser = async (username, password, confirmPassword) => {
     const emptyInventory = createEmptyInventory()
 
     const userRef = doc(db, 'users', user.uid)
-    await setDoc(
-      userRef,
-      {
-        username,
-        email: user.email,
-        inventory: emptyInventory,
-        created_at: serverTimestamp(),
-        last_login_at: serverTimestamp(),
-        user_id: user.uid,
-        position: { x: 0, y: 0, map: 'StartZone' },
-      }
-    )
-
+    await setDoc(userRef, {
+      username,
+      email: user.email,
+      inventory: emptyInventory,
+      created_at: serverTimestamp(),
+      last_login_at: serverTimestamp(),
+      user_id: user.uid,
+      position: { x: 0, y: 0, map: 'StartZone' },
+    })
   } catch (error) {
     throw new Error(`Signup failed: ${error.message}`)
   }
@@ -76,7 +72,6 @@ export const loginUser = async (username, password) => {
     const email = userSnapshot.docs[0].data().email
 
     await signInWithEmailAndPassword(auth, email, password)
-
   } catch (error) {
     throw new Error(`Login failed: ${error.message}`)
   }
@@ -155,3 +150,18 @@ export const removeLastItemFromInventory = async () => {
   await updateDoc(ref, { [`inventory.${slot}`]: { item: null } })
   console.log(`Removed from ${slot}`)
 }
+
+export const playerMovement = async (x, y) => {
+  const uid = auth.currentUser?.uid
+  if (!uid) return console.error('Not authenticated')
+
+  const userDocRef = doc(db, 'users', uid)
+  try {
+    await updateDoc(userDocRef, {
+      position: { x, y}
+    })
+  } catch (err) {
+    console.error('Failed to update player position:', err)
+  }
+}
+
